@@ -25,6 +25,7 @@ output_failed_logs() {
     for i in regress/failed*.log regress/*.log; do
         if [ -f "$i" ]; then
             echo -------------------------------------------------------------------------
+            test -z $SUDO || $SUDO chmod a+r $i
             echo LOGFILE $i
             cat $i
             echo -------------------------------------------------------------------------
