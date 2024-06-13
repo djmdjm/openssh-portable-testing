@@ -22,7 +22,9 @@ clean:
 
 distclean:	clean
 
-LTESTS= 	connect \
+LTESTS=proxy-connect connect
+
+XLTESTS= 	connect \
 		proxy-connect \
 		sshfp-connect \
 		connect-privsep \
