@@ -1799,7 +1799,7 @@ main(int ac, char **av)
 	ssh_signal(SIGHUP, SIG_IGN); /* avoid reset to SIG_DFL */
 	execv(rexec_argv[0], rexec_argv);
 
-	fatal("rexec of %s failed: %s", rexec_argv[0], strerror(errno));
+	fatal("xrexec of %s failed: %s", rexec_argv[0], strerror(errno));
 }
 
 /* server specific fatal cleanup */
