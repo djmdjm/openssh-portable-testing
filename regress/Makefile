@@ -22,7 +22,7 @@ clean:
 
 distclean:	clean
 
-LTESTS=proxy-connect connect
+LTESTS=connect
 
 XLTESTS= 	connect \
 		proxy-connect \

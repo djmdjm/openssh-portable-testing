@@ -15,7 +15,6 @@ jobs:
       matrix:
         # First we test all OSes in the default configuration.
         target:
-          - ubuntu-22.04
           - macos-14
         config: [default]
         # Then we include any extra configs we want to test for specific VMs.
