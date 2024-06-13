@@ -880,7 +880,9 @@ start_sshd ()
 	logfile="${TEST_SSH_LOGDIR}/sshd.`$OBJ/timestamp`.$$.log"
 	$SUDO ${SSHD} -f $OBJ/sshd_config "$@" -t || fatal "sshd_config broken"
 	$SUDO env SSH_SK_HELPER="$SSH_SK_HELPER" \
-	    ${SSHD} -f $OBJ/sshd_config "$@" -E$TEST_SSHD_LOGFILE
+	    ${SSHD} -f $OBJ/sshd_config "$@" -E "$OBJ/sshd-%P-%p.log"
+	#-E$TEST_SSHD_LOGFILE
+	touch $TEST_SSHD_LOGFILE
 
 	trace "wait for sshd"
 	i=0;
